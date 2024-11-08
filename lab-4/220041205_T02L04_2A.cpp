@@ -125,6 +125,7 @@ BankAccount Larger(const BankAccount A, const BankAccount B) {
 
 int main() {
   BankAccount acc1("Mirza Adnan", "0204228", CURRENT_ACCOUNT, 32000, 2000);
+  BankAccount acc1("Mirza Adnan", "0204228", CURRENT_ACCOUNT, 32000, 2000);
   BankAccount::displayStat();
   acc1.giveInterest();
   BankAccount::displayStat();

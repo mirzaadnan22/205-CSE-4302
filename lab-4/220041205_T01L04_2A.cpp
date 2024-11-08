@@ -70,17 +70,17 @@ public:
 set<Product*> Product::instances;
 
 int main() {
-  Product p1("Koko Krunch", "001", 300, 5, 16);
+  Product p1("Koko Krunch", "001", 10, 10, 16);
   p1.addToInventory(5);
   p1.displayDetails();
-  p1.purchase(2);
+  p1.purchase(5);
   p1.displayDetails();
-  p1.updatePrice(25);
+  p1.updatePrice(5);
   p1.displayDetails();
   p1.displayInventoryValue();
 
-  Product p2("Aarong Strawberry Milk", "002", 30, 20, 40);
-  Product p3("Pringles", "003", 250, 6, 18);
+  Product p2("Aarong Strawberry Milk", "002", 10, 10, 40);
+  Product p3("Pringles", "003", 10, 10, 18);
 
   Product::displayTotalInventoryValue();
 }

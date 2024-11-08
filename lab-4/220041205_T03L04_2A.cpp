@@ -29,18 +29,20 @@ private:
       if (totalSalary <= 2000) {
         return LOW_STATUS;
       }
-      else if (totalSalary > 20000) {
+      else {
         return MODERATE_STATUS;
       }
     }
-    else if (age > 25) {
+    else {
       if (totalSalary <= 21000) return LOW_STATUS;
       else if (totalSalary > 21000 && totalSalary <= 60000) return MODERATE_STATUS;
-      else if (totalSalary > 60000) return HIGH_STATUS;
+      else return HIGH_STATUS;
     }
   }
 
   float calculateBonus() {
+    yearlyIncrement();
+    float totalSalary = calculateTotalSalary();
     EmployeeStatus status = getStatus();
     if (status == LOW_STATUS) {
       return BaseSalary * 0.05;
@@ -48,13 +50,13 @@ private:
     else if (status == MODERATE_STATUS) {
       return BaseSalary * 0.1;
     }
-    else if (status == HIGH_STATUS) {
+    else {
       return BaseSalary * 0.15;
     }
   }
 
 public:
-  Employee();
+  Employee() {}
   Employee(string _name, int _id, float _base, int _joining, int _age) {
     EmpName = _name;
     ID = _id;
@@ -76,11 +78,14 @@ public:
   }
 
   void ShowInfo() {
+    EmployeeStatus status = getStatus();
+
     cout << "Name: " << EmpName << "\n";
     cout << "ID: " << ID << "\n";
     cout << "Base Salary: " << BaseSalary << "\n";
     cout << "Joining Year: " << JoiningYear << "\n";
     cout << "Age: " << age << "\n";
+    cout << "Bonus: " << calculateBonus() << "\n";
   }
 };
 
